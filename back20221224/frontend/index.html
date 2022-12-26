@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+
+<!-- This code was generated using AnimaApp.com. 
+This code is a high-fidelity prototype.
+Get developer-friendly React or HTML/CSS code for this project at: https://projects.animaapp.com?utm_source=hosted-code 
+21/12/2022 21:48:37 -->
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=1440, maximum-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="https://animaproject.s3.amazonaws.com/home/favicon.png">
+    <meta name="og:type" content="website">
+    <meta name="twitter:card" content="photo">
+    <script defer src="https://animaapp.s3.amazonaws.com/js/typescript/jquery/3.2.0/jquery.js"></script>
+    <script id="anima-hotspots-script" src="hotspots.js"></script>
+    <script id="anima-overrides-script" src="overrides.js"></script>
+    <script src="https://animaapp.s3.amazonaws.com/js/timeline.js"></script>
+    <style>
+        @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+        @import url("https://fonts.googleapis.com/css?family=Secular+One:400|Ubuntu:300,700|Rubik:400|Fira+Code:400");
+
+        /* The following line is used to measure usage of this code in production. For more info see our usage billing page */
+        @import url("https://px.animaapp.com/63a37d583e8ee7ebecbfe16e.63a37d5a99be2328457b1de4.ziFD0zm.hch.png");
+
+
+        .screen textarea:focus,
+        .screen input:focus {
+            outline: none;
+        }
+
+        .screen * {
+            -webkit-font-smoothing: antialiased;
+            box-sizing: border-box;
+        }
+
+        .screen div {
+            -webkit-text-size-adjust: none;
+        }
+
+        .component-wrapper a {
+            display: contents;
+            pointer-events: auto;
+            text-decoration: none;
+        }
+
+        .component-wrapper * {
+            -webkit-font-smoothing: antialiased;
+            box-sizing: border-box;
+            pointer-events: none;
+        }
+
+        .component-wrapper a *,
+        .component-wrapper input,
+        .component-wrapper video,
+        .component-wrapper iframe {
+            pointer-events: auto;
+        }
+
+        .component-wrapper.not-ready,
+        .component-wrapper.not-ready * {
+            visibility: hidden !important;
+        }
+
+        .screen a {
+            display: contents;
+            text-decoration: none;
+        }
+
+        .full-width-a {
+            width: 100%;
+        }
+
+        .full-height-a {
+            height: 100%;
+        }
+
+        .container-center-vertical {
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .container-center-vertical>* {
+            flex-shrink: 0;
+            pointer-events: auto;
+        }
+
+        .container-center-horizontal {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            pointer-events: none;
+            width: 100%;
+        }
+
+        .container-center-horizontal>* {
+            flex-shrink: 0;
+            pointer-events: auto;
+        }
+
+        .auto-animated div {
+            --z-index: -1;
+            opacity: 0;
+            position: absolute;
+        }
+
+        .auto-animated input {
+            --z-index: -1;
+            opacity: 0;
+            position: absolute;
+        }
+
+        .auto-animated .container-center-vertical,
+        .auto-animated .container-center-horizontal {
+            opacity: 1;
+        }
+
+        .overlay-base {
+            display: none;
+            height: 100%;
+            opacity: 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        .overlay-base.animate-appear {
+            align-items: center;
+            animation: reveal 0.3s ease-in-out 1 normal forwards;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            opacity: 0;
+        }
+
+        .overlay-base.animate-disappear {
+            animation: reveal 0.3s ease-in-out 1 reverse forwards;
+            display: block;
+            opacity: 1;
+            pointer-events: none;
+        }
+
+        .overlay-base.animate-disappear * {
+            pointer-events: none;
+        }
+
+        @keyframes reveal {
+            from {
+                opacity: 0
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        .animate-nodelay {
+            animation-delay: 0s;
+        }
+
+        .align-self-flex-start {
+            align-self: flex-start;
+        }
+
+        .align-self-flex-end {
+            align-self: flex-end;
+        }
+
+        .align-self-flex-center {
+            align-self: flex-center;
+        }
+
+        .valign-text-middle {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .valign-text-bottom {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        .listeners-active,
+        .listeners-active * {
+            pointer-events: auto;
+        }
+
+        .hidden,
+        .hidden * {
+            pointer-events: none;
+            visibility: hidden;
+        }
+
+        .smart-layers-pointers,
+        .smart-layers-pointers * {
+            pointer-events: auto;
+            visibility: visible;
+        }
+
+        .listeners-active-click,
+        .listeners-active-click * {
+            cursor: pointer;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black: #000000;
+            --magenta--fuchsia: #fb32ff;
+            --magenta--fuchsia-2: #fb00ff;
+            --white: #ffffff;
+            --white-2: #ffffffe0;
+
+            --font-size-l: 48px;
+            --font-size-m: 32px;
+            --font-size-s: 24px;
+            --font-size-xs: 20px;
+            --font-size-xxs: 16px;
+            --font-size-xxxs: 15px;
+
+            --font-family-fira_code: "Fira Code", Helvetica;
+            --font-family-rubik: "Rubik", Helvetica;
+            --font-family-secular_one: "Secular One", Helvetica;
+            --font-family-ubuntu: "Ubuntu", Helvetica;
+        }
+
+        .secularone-normal-white-24px {
+            color: var(--white);
+            font-family: var(--font-family-secular_one);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .secularone-normal-magenta--fuchsia-24px {
+            color: var(--magenta--fuchsia);
+            font-family: var(--font-family-secular_one);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .secularone-normal-white-16px {
+            color: var(--white);
+            font-family: var(--font-family-secular_one);
+            font-size: var(--font-size-xxs);
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .ubuntu-light-white-15px {
+            color: var(--white-2);
+            font-family: var(--font-family-ubuntu);
+            font-size: var(--font-size-xxxs);
+            font-style: normal;
+            font-weight: 300;
+        }
+
+        .secularone-normal-white-24px-2 {
+            font-family: var(--font-family-secular_one);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .secularone-normal-magenta--fuchsia-32px {
+            color: var(--magenta--fuchsia-2);
+            font-family: var(--font-family-secular_one);
+            font-size: var(--font-size-m);
+            font-style: normal;
+            font-weight: 400;
+        }
+
+        .ubuntu-bold-white-32px {
+            color: var(--white);
+            font-family: var(--font-family-ubuntu);
+            font-size: var(--font-size-m);
+            font-style: normal;
+            font-weight: 700;
+        }
+
+        :root {}
+
+
+        /* screen - desktop-1 */
+
+        .desktop-1 {
+            background-color: #3b003c;
+            border: 5px none;
+            height: 3367px;
+            mix-blend-mode: normal;
+            overflow: hidden;
+            overflow-x: hidden;
+            position: relative;
+            width: 1440px;
+        }
+
+        .desktop-1 .rectangle-8-Ys8k0x {
+            background-color: #2a002b;
+            height: 3367px;
+            left: 0px;
+            mix-blend-mode: normal;
+            position: absolute;
+            top: 0px;
+            width: 1431px;
+        }
+
+        .desktop-1 .rectangle-3-Ys8k0x {
+            -webkit-backdrop-filter: blur(567px) brightness(100%);
+            backdrop-filter: blur(567px) brightness(100%);
+            background-color: #0000001f;
+            height: 3367px;
+            left: 0px;
+            mix-blend-mode: normal;
+            position: absolute;
+            top: 0px;
+            width: 1440px;
+        }
+
+        .desktop-1 .ellipse-2-Ys8k0x {
+            background: radial-gradient(50% 50% at 50% 50%, rgb(251.19400262832642, 0, 255) 0%, rgba(251.19400262832642, 0, 255, 0) 100%);
+            background-color: transparent;
+            border-radius: 532.5px/748.5px;
+            filter: blur(1000px);
+            ;
+            height: 1497px;
+            left: 1242px;
+            mix-blend-mode: normal;
+            position: absolute;
+            top: -857px;
+            width: 1065px;
+        }
+
+        .desktop-1 .rectangle-6-Ys8k0x {
+            -webkit-backdrop-filter: blur(400px) brightness(100%);
+            backdrop-filter: blur(400px) brightness(100%);
+            background: radial-gradient(50% 50% at 50% 50%, rgba(59.351249635219574, 0, 60.56249924004078, 0.07000000029802322) 0%, rgba(251.51500940322876, 80.74999898672104, 255, 0) 100%);
+            background-color: transparent;
+            height: 312px;
+            left: 0px;
+            mix-blend-mode: normal;
+            position: absolute;
+            top: 3055px;
+            width: 1440px;
+        }
+
+        .desktop-1 .polygon-2-Ys8k0x {
+            background-color: transparent;
+            height: 786px;
+            left: 0px;
+            position: absolute;
+            top: 2169px;
+            width: 647px;
+        }
+
+        .desktop-1 .portfoliorushi-Ys8k0x {
+            background-color: transparent;
+            height: auto;
+            left: 173px;
+            letter-spacing: 4.56px;
+            line-height: normal;
+            mix-blend-mode: normal;
+            position: absolute;
+            text-align: left;
+            top: 42px;
+            width: auto;
+        }
+
+        .desktop-1 .frame-29-Ys8k0x {
+            align-items: flex-start;
+            background-color: transparent;
+            display: flex;
+            gap: 34px;
+            height: auto;
+            left: 965px;
+            position: absolute;
+            top: 53px;
+            width: fit-content;
+        }
+
+        .desktop-1 .home-YoT5ET {
+            background-color: transparent;
+            letter-spacing: 0.64px;
+            line-height: normal;
+            margin-top: -1.00px;
+            mix-blend-mode: normal;
+            position: relative;
+            text-align: left;
+            text-shadow: 0px 4px 4px #00000040;
+            width: fit-content;
+        }
+
+        .desktop-1 .skills-YoT5ET {
+            background-color: transparent;
+            letter-spacing: 0.64px;
+            line-height: normal;
+            margin-top: -1.00px;
+            mix-blend-mode: normal;
+            position: relative;
+            text-align: left;
+            text-shadow: 0px 4px 4px #00000040;
+            width: fit-content;
+        }
+
+        .desktop-1 .projects-YoT5ET {
+            background-color: transparent;
+            letter-spacing: 0.64px;
+            line-height: normal;
+            margin-top: -1.00px;
+            mix-blend-mode: normal;
+            position: relative;
+            text-align: left;
+            text-shadow: 0px 4px 4px #00000040;
+            width: fit-content;
+        }
+
+        .desktop-1 .about-YoT5ET {
+            background-color: transparent;
+            letter-spacing: 0.64px;
+            line-height: normal;
+            margin-top: -1.00px;
+            mix-blend-mode: normal;
+            position: relative;
+            text-align: left;
+            text-shadow: 0px 4px 4px #00000040;
+            width: fit-content;
+        }
+
+        .desktop-1 .x-Ys8k0x {
+            background-color: transparent;
+            color: var(--white);
+            font-family: var(--font-family-secular_one);
+            font-size: var(--font-size-m);
+            font-style: normal;
+            font-weight: 400;
+            height: auto;
+            left: 144px;
+            letter-spacing: 6.08px;
+            line-height: normal;
+            mix-blend-mode: normal;
+            position: absolute;
+            text-align: left;
+            text-shadow: 0px 4px 4px #00000040;
+            top: 34px;
+            width: 25px;
+        }
+
+        .desktop-1 .group-2-Ys8k0x {
+            background-color: transparent;
+            height: 480px;
+            left: 340px;
+            position: absolute;
+            top: 229px;
+            width: 766px;
+        }
+
+        .desktop-1 .rectangle-1-LE77Zx {
+            -webkit-backdrop-filter: blur(320px) brightness(100%);
+            backdrop-filter: blur(320px) brightness(100%);
+            background-color: #2400250f;
+            border: 1px solid;
+            border-color: transparent;
+            border-image: linear-gradient(to bottom, rgb(196.7686414718628, 0, 199.75000709295273), rgba(255, 255, 255, 0) 86.26927733421326%) 1;
+            border-radius: 0px 0px 10px 10px;
+            box-shadow: 0px 4px 4px #00000040;
+            height: 457px;
+            left: 0px;
+            mix-blend-mode: normal;
+            position: absolute;
+            top: 23px;
+            width: 760px;
+        }
+
+        .desktop-1 .rectangle-2-LE77Zx {
+            -webkit-backdrop-filter: blur(150px) brightness(100%);
+            backdrop-filter: blur(150px) brightness(100%);
+            background-color: #68006a;
+            border: 1px solid;
+            border-color: transparent;
+            border-image: linear-gradient(to bottom, rgb(196.7686414718628, 0, 199.75000709295273), rgba(255, 255, 255, 0) 86.26927733421326%) 1;
+            border-radius: 5px 5px 0px 0px;
+            height: 24px;
+            left: 0px;
+            mix-blend-mode: normal;
+            position: absolute;
+            top: 0px;
+            width: 760px;
+        }
+
+        .desktop-1 .rushilocalhost-LE77Zx {
+            background-color: transparent;
+            color: var(--white);
+            font-family: var(--font-family-ubuntu);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 700;
+            height: auto;
+            left: 32px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            mix-blend-mode: normal;
+            position: absolute;
+            text-align: left;
+            top: 49px;
+            width: auto;
+        }
+
+        .desktop-1 .hey-i-am-rushikesh-i-am-a-LE77Zx {
+            background-color: transparent;
+            color: transparent;
+            font-family: var(--font-family-ubuntu);
+            font-size: var(--font-size-l);
+            font-style: normal;
+            font-weight: 700;
+            height: auto;
+            left: 155px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: absolute;
+            text-align: left;
+            top: 196px;
+            width: auto;
+        }
+
+        .desktop-1 .span0-rf5xkF {
+            color: var(--white);
+            font-style: normal;
+        }
+
+        .desktop-1 .span1-rf5xkF {
+            color: var(--magenta--fuchsia);
+            font-style: normal;
+        }
+
+        .desktop-1 .span2-rf5xkF {
+            color: var(--white);
+            font-style: normal;
+        }
+
+        .desktop-1 .whoami-LE77Zx {
+            background-color: transparent;
+            color: var(--white);
+            font-family: var(--font-family-ubuntu);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 700;
+            height: auto;
+            left: 259px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            mix-blend-mode: normal;
+            position: absolute;
+            text-align: left;
+            top: 49px;
+            width: auto;
+        }
+
+        .desktop-1 .group-1-LE77Zx {
+            background-color: transparent;
+            height: 23px;
+            left: 690px;
+            position: absolute;
+            top: 0px;
+            width: 60px;
+        }
+
+        .desktop-1 .icon-close-ehKMbl {
+            background-color: transparent;
+            height: 23px;
+            left: 41px;
+            mix-blend-mode: normal;
+            position: absolute;
+            top: 0px;
+            width: 19px;
+        }
+
+        .desktop-1 .minus-sign-ehKMbl {
+            background-color: transparent;
+            height: 23px;
+            left: 0px;
+            mix-blend-mode: normal;
+            position: absolute;
+            top: 0px;
+            width: 19px;
+        }
+
+        .desktop-1 .stop-circled-ehKMbl {
+            background-color: transparent;
+            height: 23px;
+            left: 21px;
+            mix-blend-mode: normal;
+            position: absolute;
+            top: 0px;
+            width: 19px;
+        }
+
+        .desktop-1 .line-3-Ys8k0x {
+            background-color: transparent;
+            height: 1px;
+            left: 333px;
+            object-fit: cover;
+            position: absolute;
+            top: 1549px;
+            width: 972px;
+        }
+
+        .desktop-1 .text-Ys8k0x {
+            background-color: transparent;
+            height: auto;
+            left: 599px;
+            letter-spacing: 4.56px;
+            line-height: normal;
+            mix-blend-mode: normal;
+            position: absolute;
+            text-align: left;
+            top: 1571px;
+            width: auto;
+        }
+
+        .desktop-1 .projects-Ys8k0x {
+            background-color: transparent;
+            height: auto;
+            left: 168px;
+            letter-spacing: 4.56px;
+            line-height: normal;
+            position: absolute;
+            text-align: left;
+            top: 1527px;
+            width: auto;
+        }
+
+        .desktop-1 .span0-LS5mL1 {}
+
+        .desktop-1 .span1-LS5mL1 {}
+
+        .desktop-1 .span2-LS5mL1 {}
+
+        .desktop-1 .x-V3rtYt {
+            background-color: transparent;
+            height: auto;
+            left: 140px;
+            letter-spacing: 6.08px;
+            line-height: normal;
+            mix-blend-mode: normal;
+            position: absolute;
+            text-align: left;
+            text-shadow: 0px 4px 4px #00000040;
+            top: 1519px;
+            width: 25px;
+        }
+
+        .desktop-1 .line-5-Ys8k0x {
+            background-color: transparent;
+            height: 1px;
+            left: 288px;
+            object-fit: cover;
+            position: absolute;
+            top: 848px;
+            width: 1014px;
+        }
+
+        .desktop-1 .text-V3rtYt {
+            background-color: transparent;
+            height: auto;
+            left: 599px;
+            letter-spacing: 4.56px;
+            line-height: normal;
+            mix-blend-mode: normal;
+            position: absolute;
+            text-align: left;
+            top: 826px;
+            width: auto;
+        }
+
+        .desktop-1 .skills-Ys8k0x {
+            background-color: transparent;
+            height: auto;
+            left: 166px;
+            letter-spacing: 4.56px;
+            line-height: normal;
+            position: absolute;
+            text-align: left;
+            top: 826px;
+            width: auto;
+        }
+
+        .desktop-1 .span0-lR0eJP {}
+
+        .desktop-1 .span1-lR0eJP {}
+
+        .desktop-1 .span2-lR0eJP {}
+
+        .desktop-1 .x-InqUpZ {
+            background-color: transparent;
+            height: auto;
+            left: 137px;
+            letter-spacing: 6.08px;
+            line-height: normal;
+            mix-blend-mode: normal;
+            position: absolute;
+            text-align: left;
+            text-shadow: 0px 4px 4px #00000040;
+            top: 818px;
+            width: 25px;
+        }
+
+        .desktop-1 .line-4-Ys8k0x {
+            background-color: transparent;
+            height: 1px;
+            left: 293px;
+            object-fit: cover;
+            position: absolute;
+            top: 2281px;
+            width: 1012px;
+        }
+
+        .desktop-1 .about-Ys8k0x {
+            background-color: transparent;
+            height: auto;
+            left: 169px;
+            letter-spacing: 4.56px;
+            line-height: normal;
+            position: absolute;
+            text-align: left;
+            top: 2259px;
+            width: auto;
+        }
+
+        .desktop-1 .span0-FGxmuj {}
+
+        .desktop-1 .span1-FGxmuj {}
+
+        .desktop-1 .span2-FGxmuj {}
+
+        .desktop-1 .x-EAe9Rz {
+            background-color: transparent;
+            height: auto;
+            left: 140px;
+            letter-spacing: 6.08px;
+            line-height: normal;
+            mix-blend-mode: normal;
+            position: absolute;
+            text-align: left;
+            text-shadow: 0px 4px 4px #00000040;
+            top: 2251px;
+            width: 25px;
+        }
+
+        .desktop-1 .rectangle-4-Ys8k0x {
+            background-color: #45004661;
+            border-radius: 21px;
+            height: 572px;
+            left: -17px;
+            mix-blend-mode: normal;
+            position: absolute;
+            top: 184px;
+            width: 94px;
+        }
+
+        .desktop-1 .frame-1-Ys8k0x {
+            background-color: transparent;
+            height: 359px;
+            left: 12px;
+            position: absolute;
+            top: 291px;
+            width: 47px;
+        }
+
+        .desktop-1 .frame-18-Ys8k0x {
+            -webkit-backdrop-filter: blur(247px) brightness(100%);
+            align-items: flex-start;
+            backdrop-filter: blur(247px) brightness(100%);
+            background-color: #ffffff0a;
+            border: 1px solid;
+            border-color: transparent;
+            border-image: linear-gradient(to bottom, rgba(196.7686414718628, 0, 199.75000709295273, 0.7200000286102295), rgba(255, 255, 255, 0) 86.26927733421326%) 1;
+            box-shadow: 0px 4px 4px #00000040;
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+            height: auto;
+            left: 242px;
+            mix-blend-mode: normal;
+            padding: 72px 40px;
+            position: absolute;
+            top: 1637px;
+            width: 466px;
+        }
+
+        .desktop-1 .frame-7-BaXs9i {
+            background-color: transparent;
+            height: 58px;
+            min-width: 250px;
+            position: relative;
+        }
+
+        .desktop-1 .siap-BxmAS0 {
+            background-color: transparent;
+            height: 37px;
+            left: 0px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            mix-blend-mode: normal;
+            position: absolute;
+            text-align: center;
+            top: -1px;
+            width: auto;
+        }
+
+        .desktop-1 .httpssiapsitspuneorg-BxmAS0 {
+            background-color: transparent;
+            color: var(--magenta--fuchsia-2);
+            font-family: var(--font-family-ubuntu);
+            font-size: var(--font-size-xxs);
+            font-style: normal;
+            font-weight: 700;
+            height: 18px;
+            left: 0px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            mix-blend-mode: normal;
+            position: absolute;
+            text-align: center;
+            top: 39px;
+            width: auto;
+        }
+
+        .desktop-1 .siap-is-the-qr-based-BaXs9i {
+            align-self: stretch;
+            background-color: transparent;
+            color: var(--white);
+            font-family: var(--font-family-ubuntu);
+            font-size: var(--font-size-xs);
+            font-style: normal;
+            font-weight: 700;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            mix-blend-mode: normal;
+            position: relative;
+            text-align: justify;
+        }
+
+        .desktop-1 .hello-world-im-rushi-Ys8k0x {
+            background-color: transparent;
+            color: transparent;
+            font-family: var(--font-family-rubik);
+            font-size: var(--font-size-m);
+            font-style: normal;
+            font-weight: 400;
+            height: auto;
+            left: 536px;
+            letter-spacing: 6.08px;
+            line-height: normal;
+            position: absolute;
+            text-align: justify;
+            top: 2383px;
+            width: 760px;
+        }
+
+        .desktop-1 .span0-cw8tbz {
+            color: var(--white);
+            font-style: normal;
+        }
+
+        .desktop-1 .span1-cw8tbz {
+            color: var(--magenta--fuchsia);
+            font-family: var(--font-family-secular_one);
+            font-style: normal;
+        }
+
+        .desktop-1 .span2-cw8tbz {
+            color: var(--white);
+            font-family: var(--font-family-secular_one);
+            font-style: normal;
+        }
+
+        .desktop-1 .span3-cw8tbz {
+            color: var(--white);
+            font-style: normal;
+        }
+
+        .desktop-1 .group-3-Ys8k0x {
+            background-color: transparent;
+            height: 451px;
+            left: 195px;
+            position: absolute;
+            top: 945px;
+            width: 1049px;
+        }
+
+        .desktop-1 .polygon-1-Ys8k0x {
+            background-color: transparent;
+            height: 302px;
+            left: 195px;
+            mix-blend-mode: normal;
+            position: absolute;
+            top: 2449px;
+            width: 262px;
+        }
+
+        .desktop-1 .frame-20-Ys8k0x {
+            -webkit-backdrop-filter: blur(247px) brightness(100%);
+            align-items: flex-start;
+            backdrop-filter: blur(247px) brightness(100%);
+            background-color: #ffffff0a;
+            border: 1px solid;
+            border-color: transparent;
+            border-image: linear-gradient(to bottom, rgb(196.7686414718628, 0, 199.75000709295273), rgba(255, 255, 255, 0) 86.26927733421326%) 1;
+            box-shadow: 0px 4px 4px #00000040;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            height: 421px;
+            left: 741px;
+            mix-blend-mode: normal;
+            padding: 72px 40px;
+            position: absolute;
+            top: 1637px;
+            width: 457px;
+        }
+
+        .desktop-1 .frame-19-xS0IaW {
+            align-items: flex-start;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            height: auto;
+            position: relative;
+            width: fit-content;
+        }
+
+        .desktop-1 .astro365-vdHDWe {
+            background-color: transparent;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            margin-top: -1.00px;
+            mix-blend-mode: normal;
+            position: relative;
+            text-align: center;
+            width: fit-content;
+        }
+
+        .desktop-1 .httpswwwastro365in-vdHDWe {
+            background-color: transparent;
+            color: var(--magenta--fuchsia-2);
+            font-family: var(--font-family-ubuntu);
+            font-size: var(--font-size-xxs);
+            font-style: normal;
+            font-weight: 700;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            mix-blend-mode: normal;
+            position: relative;
+            text-align: center;
+            width: fit-content;
+        }
+
+        .desktop-1 .astro365-is-web-base-xS0IaW {
+            align-self: stretch;
+            background-color: transparent;
+            color: var(--white);
+            font-family: var(--font-family-ubuntu);
+            font-size: var(--font-size-xs);
+            font-style: normal;
+            font-weight: 700;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            mix-blend-mode: normal;
+            position: relative;
+            text-align: justify;
+        }
+
+        .desktop-1 .rushikesh-muley-Ys8k0x {
+            background-color: transparent;
+            color: transparent;
+            font-family: var(--font-family-fira_code);
+            font-size: var(--font-size-xxs);
+            font-style: normal;
+            font-weight: 400;
+            height: auto;
+            left: 638px;
+            letter-spacing: 0.00px;
+            line-height: normal;
+            position: absolute;
+            text-align: left;
+            top: 3323px;
+            width: auto;
+        }
+
+        .desktop-1 .span0-JQxL6k {
+            color: #abb2bf;
+            font-style: normal;
+        }
+
+        .desktop-1 .span1-JQxL6k {
+            color: var(--magenta--fuchsia);
+            font-style: normal;
+        }
+
+        .desktop-1 .rushikesh-muley-V3rtYt {
+            background-color: transparent;
+            height: auto;
+            left: 135px;
+            letter-spacing: 6.08px;
+            line-height: normal;
+            mix-blend-mode: normal;
+            position: absolute;
+            text-align: justify;
+            top: 3115px;
+            width: auto;
+        }
+
+        .desktop-1 .full-stack-developer-pune-maharashtra-Ys8k0x {
+            background-color: transparent;
+            color: var(--white);
+            font-family: var(--font-family-ubuntu);
+            font-size: var(--font-size-s);
+            font-style: normal;
+            font-weight: 300;
+            height: auto;
+            left: 135px;
+            letter-spacing: 4.56px;
+            line-height: normal;
+            mix-blend-mode: normal;
+            position: absolute;
+            text-align: justify;
+            top: 3178px;
+            width: auto;
+        }
+
+        .desktop-1 .frame-25-Ys8k0x {
+            align-items: flex-start;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            gap: 19px;
+            height: auto;
+            left: 1069px;
+            position: absolute;
+            top: 3116px;
+            width: fit-content;
+        }
+
+        .desktop-1 .frame-21-GvXYqs {
+            align-items: center;
+            background-color: transparent;
+            display: flex;
+            gap: 10px;
+            height: auto;
+            position: relative;
+            width: fit-content;
+        }
+
+        .desktop-1 .vector-Z4xwZn {
+            background-color: transparent;
+            height: 13.478759765625px;
+            min-width: 18.1800537109375px;
+            mix-blend-mode: normal;
+            position: relative;
+        }
+
+        .desktop-1 .rsm99123gmailcom-Z4xwZn {
+            background-color: transparent;
+            letter-spacing: 2.85px;
+            line-height: normal;
+            margin-top: -1.00px;
+            mix-blend-mode: normal;
+            position: relative;
+            text-align: justify;
+            width: fit-content;
+        }
+
+        .desktop-1 .frame-22-GvXYqs {
+            align-items: flex-start;
+            background-color: transparent;
+            display: flex;
+            gap: 6px;
+            height: auto;
+            position: relative;
+            width: fit-content;
+        }
+
+        .desktop-1 .icon-github-jd7Yec {
+            background-color: transparent;
+            height: 19.680419921875px;
+            min-width: 20.1800537109375px;
+            position: relative;
+        }
+
+        .desktop-1 .rush-x-jd7Yec {
+            background-color: transparent;
+            letter-spacing: 2.85px;
+            line-height: normal;
+            margin-top: -1.00px;
+            mix-blend-mode: normal;
+            position: relative;
+            text-align: justify;
+            width: fit-content;
+        }
+
+        .desktop-1 .frame-23-GvXYqs {
+            align-items: flex-start;
+            background-color: transparent;
+            display: flex;
+            gap: 6px;
+            height: auto;
+            position: relative;
+            width: fit-content;
+        }
+
+        .desktop-1 .icon-instagram-yIPDvE {
+            background-color: transparent;
+            height: 20.179931640625px;
+            min-width: 20.1800537109375px;
+            position: relative;
+        }
+
+        .desktop-1 .rushim35-yIPDvE {
+            background-color: transparent;
+            letter-spacing: 2.85px;
+            line-height: normal;
+            margin-top: -1.00px;
+            mix-blend-mode: normal;
+            position: relative;
+            text-align: justify;
+            width: fit-content;
+        }
+
+        .desktop-1 .frame-24-GvXYqs {
+            align-items: center;
+            background-color: transparent;
+            display: flex;
+            gap: 6px;
+            height: auto;
+            position: relative;
+            width: fit-content;
+        }
+
+        .desktop-1 .icon-linkedin-xHh6Bh {
+            background-color: transparent;
+            height: 20.179931640625px;
+            min-width: 20.1800537109375px;
+            position: relative;
+        }
+
+        .desktop-1 .r9941-xHh6Bh {
+            background-color: transparent;
+            letter-spacing: 2.85px;
+            line-height: normal;
+            mix-blend-mode: normal;
+            position: relative;
+            text-align: justify;
+            width: fit-content;
+        }
+    </style>
+</head>
+
+<body style="margin: 0;background: #3b003c;"><input type="hidden" id="anPageName" name="page" value="desktop-1">
+    <div class="container-center-horizontal">
+        <div class="desktop-1 screen " data-id="2:2">
+            <div class="rectangle-8-Ys8k0x" data-id="41:302"></div>
+            <div class="rectangle-3-Ys8k0x" data-id="8:3"></div>
+            <div class="ellipse-2-Ys8k0x" data-id="41:301"></div>
+            <div class="rectangle-6-Ys8k0x" data-id="19:45"></div><img class="polygon-2-Ys8k0x" data-id="19:12"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                anima-src="https://cdn.animaapp.com/projects/63a37d7c5178d86025f845ff/releases/63a37f31ccb684b77893b3db/img/polygon-2@2x.svg"
+                alt="Polygon 2">
+            <div class="portfoliorushi-Ys8k0x secularone-normal-white-24px" data-id="2:13">portfolio@rushi</div>
+            <div class="frame-29-Ys8k0x" data-id="41:299">
+                <div class="home-YoT5ET valign-text-middle secularone-normal-white-16px" data-id="19:67">HOME</div>
+                <div class="skills-YoT5ET valign-text-middle secularone-normal-white-16px" data-id="2:40">SKILLS</div>
+                <div class="projects-YoT5ET valign-text-middle secularone-normal-white-16px" data-id="2:41">PROJECTS
+                </div>
+                <div class="about-YoT5ET valign-text-middle secularone-normal-white-16px" data-id="2:42">ABOUT</div>
+            </div>
+            <div class="x-Ys8k0x" data-id="2:37">#</div>
+            <div class="group-2-Ys8k0x" data-id="8:2">
+                <div class="rectangle-1-LE77Zx" data-id="2:44"></div>
+                <div class="rectangle-2-LE77Zx" data-id="2:45"></div>
+                <div class="rushilocalhost-LE77Zx" data-id="2:113">rushi@localhost:~$</div>
+                <h1 class="hey-i-am-rushikesh-i-am-a-LE77Zx" data-id="2:121"><span class="span0-rf5xkF">Hey I am
+                    </span><span class="span1-rf5xkF">Rushikesh</span><span class="span2-rf5xkF">,<br>I am a ---</span>
+                </h1>
+                <div class="whoami-LE77Zx" data-id="2:120">whoami</div>
+                <div class="group-1-LE77Zx" data-id="2:115"><img class="icon-close-ehKMbl" data-id="2:116"
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                        anima-src="https://cdn.animaapp.com/projects/63a37d7c5178d86025f845ff/releases/63a37f31ccb684b77893b3db/img/cancel@2x.png"
+                        alt="icon-close"><img class="minus-sign-ehKMbl" data-id="2:117"
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                        anima-src="https://cdn.animaapp.com/projects/63a37d7c5178d86025f845ff/releases/63a37f31ccb684b77893b3db/img/minus-sign@2x.png"
+                        alt="Minus Sign"><img class="stop-circled-ehKMbl" data-id="2:118"
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                        anima-src="https://cdn.animaapp.com/projects/63a37d7c5178d86025f845ff/releases/63a37f31ccb684b77893b3db/img/stop-circled@2x.png"
+                        alt="Stop Circled"></div>
+            </div><img class="line-3-Ys8k0x" data-id="3:6"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                anima-src="https://cdn.animaapp.com/projects/63a37d7c5178d86025f845ff/releases/63a37f31ccb684b77893b3db/img/line-3@1x.svg"
+                alt="Line 3">
+            <div class="text-Ys8k0x secularone-normal-white-24px" data-id="3:12"></div>
+            <div class="projects-Ys8k0x secularone-normal-white-24px-2" data-id="3:14"><span
+                    class="span0-LS5mL1 secularone-normal-magenta--fuchsia-24px">{</span><span
+                    class="span1-LS5mL1 secularone-normal-white-24px">PROJECTS</span><span
+                    class="span2-LS5mL1 secularone-normal-magenta--fuchsia-24px">}</span></div>
+            <div class="x-V3rtYt secularone-normal-magenta--fuchsia-32px" data-id="3:15">#</div><img
+                class="line-5-Ys8k0x" data-id="16:139"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                anima-src="https://cdn.animaapp.com/projects/63a37d7c5178d86025f845ff/releases/63a37f31ccb684b77893b3db/img/line-5@1x.svg"
+                alt="Line 5">
+            <div class="text-V3rtYt secularone-normal-white-24px" data-id="16:140"></div>
+            <div class="skills-Ys8k0x secularone-normal-white-24px-2" data-id="16:141"><span
+                    class="span0-lR0eJP secularone-normal-magenta--fuchsia-24px">{</span><span
+                    class="span1-lR0eJP secularone-normal-white-24px">SKILLS</span><span
+                    class="span2-lR0eJP secularone-normal-magenta--fuchsia-24px">}</span></div>
+            <div class="x-InqUpZ secularone-normal-magenta--fuchsia-32px" data-id="16:142">#</div><img
+                class="line-4-Ys8k0x" data-id="16:126"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                anima-src="https://cdn.animaapp.com/projects/63a37d7c5178d86025f845ff/releases/63a37f31ccb684b77893b3db/img/line-4@1x.svg"
+                alt="Line 4">
+            <div class="about-Ys8k0x secularone-normal-white-24px-2" data-id="16:127"><span
+                    class="span0-FGxmuj secularone-normal-magenta--fuchsia-24px">{</span><span
+                    class="span1-FGxmuj secularone-normal-white-24px">ABOUT</span><span
+                    class="span2-FGxmuj secularone-normal-magenta--fuchsia-24px">}</span></div>
+            <div class="x-EAe9Rz secularone-normal-magenta--fuchsia-32px" data-id="16:128">#</div>
+            <div class="rectangle-4-Ys8k0x" data-id="8:4"></div><img class="frame-1-Ys8k0x" data-id="8:25"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                anima-src="https://cdn.animaapp.com/projects/63a37d7c5178d86025f845ff/releases/63a37f31ccb684b77893b3db/img/frame-1@2x.svg"
+                alt="Frame 1">
+            <div class="frame-18-Ys8k0x" data-id="16:225">
+                <div class="frame-7-BaXs9i" data-id="16:74">
+                    <div class="siap-BxmAS0 valign-text-middle ubuntu-bold-white-32px" data-id="16:75">SIAP</div>
+                    <div class="httpssiapsitspuneorg-BxmAS0 valign-text-middle" data-id="16:76">
+                        https://siap.sitspune.org</div>
+                </div>
+                <p class="siap-is-the-qr-based-BaXs9i" data-id="16:77">SIAP is the QR-based automated attendance
+                    monitoring system. The application helps with maintaining and marking attendance records of college
+                    students. The software is embedded with an anti-proxy system making it reliable and efficient for
+                    the lecturers to maintain the records precisely.</p>
+            </div>
+            <p class="hello-world-im-rushi-Ys8k0x" data-id="16:133"><span class="span0-cw8tbz">&lt;</span><span
+                    class="span1-cw8tbz">Hello World</span><span class="span2-cw8tbz">, I&#39;m Rushikesh Muley. A
+                    FullStack Developer based out of Pune, Maharashtra. It all started with &#34;How to develop a
+                    website&#34;. I love combining the worlds of logic and creative design at the Frontend with the
+                    crust of security and integrity at the Backend. Drop me a line/</span><span
+                    class="span3-cw8tbz">&gt;</span></p><img class="group-3-Ys8k0x" data-id="16:222"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                anima-src="https://cdn.animaapp.com/projects/63a37d7c5178d86025f845ff/releases/63a37f31ccb684b77893b3db/img/group-3@1x.png"
+                alt="Group 3"><img class="polygon-1-Ys8k0x" data-id="19:10"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                anima-src="https://cdn.animaapp.com/projects/63a37d7c5178d86025f845ff/releases/63a37f31ccb684b77893b3db/img/polygon-1@2x.png"
+                alt="Polygon 1">
+            <div class="frame-20-Ys8k0x" data-id="16:229">
+                <div class="frame-19-xS0IaW" data-id="16:228">
+                    <div class="astro365-vdHDWe valign-text-middle ubuntu-bold-white-32px" data-id="16:82">Astro365
+                    </div>
+                    <div class="httpswwwastro365in-vdHDWe valign-text-middle" data-id="16:83">https://www.astro365.in
+                    </div>
+                </div>
+                <p class="astro365-is-web-base-xS0IaW" data-id="16:81">Astro365 is web based project which provides
+                    various services like Standard Kundali, Match Making, Horoscope, Daily Predictions and many more at
+                    a minimal cost and with one click.</p>
+            </div>
+            <div class="rushikesh-muley-Ys8k0x" data-id="19:43"><span class="span0-JQxL6k">©</span><span
+                    class="span1-JQxL6k"> Rushikesh Muley</span></div>
+            <div class="rushikesh-muley-V3rtYt ubuntu-bold-white-32px" data-id="19:46">Rushikesh Muley</div>
+            <div class="full-stack-developer-pune-maharashtra-Ys8k0x" data-id="19:47">Full stack developer,<br>Pune,
+                Maharashtra</div>
+            <div class="frame-25-Ys8k0x" data-id="19:66">
+                <div class="frame-21-GvXYqs" data-id="19:62"><img class="vector-Z4xwZn" data-id="19:61"
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                        anima-src="https://cdn.animaapp.com/projects/63a37d7c5178d86025f845ff/releases/63a37f31ccb684b77893b3db/img/vector@2x.svg"
+                        alt="Vector">
+                    <div class="rsm99123gmailcom-Z4xwZn ubuntu-light-white-15px" data-id="19:48">rsm99123@gmail.com
+                    </div>
+                </div>
+                <div class="frame-22-GvXYqs" data-id="19:63"><img class="icon-github-jd7Yec" data-id="19:60"
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                        anima-src="https://cdn.animaapp.com/projects/63a37d7c5178d86025f845ff/releases/63a37f31ccb684b77893b3db/img/---icon--github-@2x.png"
+                        alt="icon &#34;github&#34;">
+                    <div class="rush-x-jd7Yec ubuntu-light-white-15px" data-id="19:49">@RushX</div>
+                </div>
+                <div class="frame-23-GvXYqs" data-id="19:64"><img class="icon-instagram-yIPDvE" data-id="19:54"
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                        anima-src="https://cdn.animaapp.com/projects/63a37d7c5178d86025f845ff/releases/63a37f31ccb684b77893b3db/img/---icon--instagram-@2x.png"
+                        alt="icon-instagram">
+                    <div class="rushim35-yIPDvE ubuntu-light-white-15px" data-id="19:50">@rushi.m.35</div>
+                </div>
+                <div class="frame-24-GvXYqs" data-id="19:65"><img class="icon-linkedin-xHh6Bh" data-id="19:57"
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                        anima-src="https://cdn.animaapp.com/projects/63a37d7c5178d86025f845ff/releases/63a37f31ccb684b77893b3db/img/---icon--linkedin-@2x.png"
+                        alt="icon-linkedin">
+                    <div class="r9941-xHh6Bh ubuntu-light-white-15px" data-id="19:51">@r9941</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
